@@ -1,2 +1,0 @@
-/usr/bin/ar qc lib/libmarkdown_parser.a CMakeFiles/markdown_parser.dir/src/parser/parser.cpp.o
-/usr/bin/ranlib lib/libmarkdown_parser.a

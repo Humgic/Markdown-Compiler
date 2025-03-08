@@ -1,2 +1,0 @@
-/usr/bin/ar qc lib/libmarkdown_renderer.a CMakeFiles/markdown_renderer.dir/src/renderer/html_renderer.cpp.o
-/usr/bin/ranlib lib/libmarkdown_renderer.a

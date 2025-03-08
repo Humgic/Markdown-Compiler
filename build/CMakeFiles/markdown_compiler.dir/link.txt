@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/markdown_compiler.dir/src/app/main.cpp.o -o bin/markdown_compiler  lib/libmarkdown_core.a lib/libmarkdown_parser.a lib/libmarkdown_renderer.a lib/libmarkdown_utils.a lib/libmarkdown_core.a 
