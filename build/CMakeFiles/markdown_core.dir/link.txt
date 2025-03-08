@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib/libmarkdown_core.a CMakeFiles/markdown_core.dir/src/core/chem_node.cpp.o CMakeFiles/markdown_core.dir/src/core/document.cpp.o CMakeFiles/markdown_core.dir/src/core/heading.cpp.o CMakeFiles/markdown_core.dir/src/core/math_node.cpp.o CMakeFiles/markdown_core.dir/src/core/node.cpp.o CMakeFiles/markdown_core.dir/src/core/table.cpp.o CMakeFiles/markdown_core.dir/src/core/text.cpp.o
+/usr/bin/ranlib lib/libmarkdown_core.a

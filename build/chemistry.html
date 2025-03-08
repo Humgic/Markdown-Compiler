@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Markdown Document</title>
+    <style>
+        /* WebKit特定样式 */
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; -webkit-font-smoothing: antialiased; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .math-inline { font-style: italic; }
+        .math-block { display: block; margin: 1em 0; text-align: center; }
+        .math-block-align { display: block; margin: 1em 0; }
+        .math-block-align .equation { margin-right: 3em; text-align: right; }
+        .chem-inline { display: inline-block; min-height: 100px; min-width: 150px; vertical-align: middle; }
+        .chem-block { display: block; margin: 1em auto; min-height: 300px; width: 100%; }
+        .ketcher-container { width: 100%; height: 100%; }
+    </style>
+    <!-- MathJax 数学公式渲染器 -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- Ketcher 化学式渲染器 -->
+    <script src="https://unpkg.com/ketcher-standalone@2.5.1/dist/ketcher.js"></script>
+    <script>
+        // WebKit特定的初始化代码
+        window.onload = function() {
+            // 确保Ketcher已加载
+            if (typeof ketcher === 'undefined') {
+                console.error('Ketcher library not loaded');
+                return;
+            }
+            
+            // 渲染所有化学式
+            setTimeout(function() {
+                var elements = document.querySelectorAll('.chem-inline, .chem-block');
+                for (var i = 0; i < elements.length; i++) {
+                    (function(element) {
+                        var chemContent = element.getAttribute('data-chem');
+                        if (chemContent) {
+                            try {
+                                // 创建渲染容器
+                                var container = document.createElement('div');
+                                container.className = 'ketcher-container';
+                                element.appendChild(container);
+                                
+                                // 渲染化学式
+                                ketcher.run(container, { staticMode: true })
+                                    .then(function(ketcherInstance) {
+                                        ketcherInstance.setMolecule(chemContent);
+                                    })
+                                    .catch(function(error) {
+                                        console.error('Failed to render chemical formula:', error);
+                                        element.textContent = chemContent;
+                                    });
+                            } catch (e) {
+                                console.error('Failed to render chemical formula:', e);
+                                element.textContent = chemContent;
+                            }
+                        }
+                    })(elements[i]);
+                }
+            }, 300); // 延迟300毫秒，确保页面完全加载
+        };
+    </script>
+</head>
+<body>
+<h1>化学式测试</h1>
+<h2>行内化学式</h2>
+<p>水分子: <span class="chem-inline" data-chem="H2O"></span></p>
+<p>乙醇: <span class="chem-inline" data-chem="CH3CH2OH"></span></p>
+<p>苯: <span class="chem-inline" data-chem="C6H6"></span></p>
+<h2>行间化学式</h2>
+<p>水的电离反应:</p>
+<div class="chem-block" data-chem="H2O &lt;=&gt; H+ + OH-
+"></div>
+<p>乙酸的电离:</p>
+<div class="chem-block" data-chem="CH3COOH &lt;=&gt; CH3COO- + H+
+"></div>
+<h2>复杂分子结构</h2>
+<p>苯环结构:</p>
+<div class="chem-block" data-chem="c1ccccc1
+"></div>
+<p>阿司匹林:</p>
+<div class="chem-block" data-chem="CC(=O)Oc1ccccc1C(=O)O
+"></div>
+<p>咖啡因:</p>
+<div class="chem-block" data-chem="CN1C=NC2=C1C(=O)N(C(=O)N2C)C
+"></div>
+<h2>化学反应方程式</h2>
+<p>乙醇氧化:</p>
+<div class="chem-block" data-chem="CH3CH2OH + O2 -&gt; CH3COOH + H2O
+"></div>
+<p>光合作用:</p>
+<div class="chem-block" data-chem="6CO2 + 6H2O -&gt; C6H12O6 + 6O2
+"></div>
+<h2>混合数学公式和化学式</h2>
+<p>反应速率常数: $k = A e^{-E_a/RT}$，其中 <span class="chem-inline" data-chem="CH3COOH"></span> 的活化能 $E_a = 76.6 \text{ kJ/mol}$</p>
+<p>平衡常数: $K_\text{eq} = \frac{[\text{产物}]}{[\text{反应物}]}$，对于反应 <span class="chem-inline" data-chem="H2 + I2 &lt;=&gt; 2HI"></span> </p>
+</body>
+</html>

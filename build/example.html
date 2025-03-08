@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Document</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .math-inline { font-style: italic; }
+        .math-block { display: block; margin: 1em 0; text-align: center; }
+        .math-block-align { display: block; margin: 1em 0; }
+        .math-block-align .equation { margin-right: 3em; text-align: right; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<h1>Markdown C++ 编译器示例</h1>
+<p>这是一个用于测试 Markdown C++ 编译器的示例文件。</p>
+<h2>标题支持</h2>
+<p>Markdown 支持多级标题：</p>
+<h3>三级标题</h3>
+<h4>四级标题</h4>
+<h5>五级标题</h5>
+<h6>六级标题</h6>
+<h2>数学公式支持</h2>
+<h3>行内公式</h3>
+<p>爱因斯坦的质能方程：<span class="math-inline">\(E=mc^2\)</span></p>
+<p>牛顿第二定律：<span class="math-inline">\(F=ma\)</span></p>
+<h3>行间公式（边缘自动换行）</h3>
+<div class="math-block">\[\frac{d}{dx}\left( \int_{a}^{x} f(t) \, dt \right) = f(x)
+\]</div>
+<div class="math-block">\[\sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+\]</div>
+<h3>等号对齐公式</h3>
+<div class="math-block-align">\begin{align}\begin{aligned}
+a &= b + c \\
+d &= e * f \\
+g &= h - i
+\end{aligned}
+\end{align}</div>
+<h2>表格支持</h2>
+<table><thead><tr><th>姓名</th><th>年龄</th><th>职业</th></tr></thead><tbody><tr><td>张三</td><td>25</td><td>工程师</td></tr><tr><td>李四</td><td>30</td><td>设计师</td></tr><tr><td>王五</td><td>28</td><td>产品经理</td></tr></tbody></table>
+<h2>综合示例</h2>
+<p>下面是一个综合示例，包含了多种元素：</p>
+<h3>麦克斯韦方程组</h3>
+<div class="math-block-align">\begin{align}\begin{aligned}
+\nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
+\nabla \cdot \vec{B} &= 0 \\
+\nabla \times \vec{E} &= -\frac{\partial \vec{B}}{\partial t} \\
+\nabla \times \vec{B} &= \mu_0 \vec{J} + \mu_0 \varepsilon_0 \frac{\partial \vec{E}}{\partial t}
+\end{aligned}
+\end{align}</div>
+<h3>常见物理常数</h3>
+<table><thead><tr><th>常数名称</th><th>符号</th><th>值</th><th>单位</th></tr></thead><tbody><tr><td>光速</td><td><span class="math-inline">\(c\)</span></td><td><span class="math-inline">\(2.99792458 \times 10^8\)</span></td><td>m/s</td></tr><tr><td>普朗克常数</td><td><span class="math-inline">\(h\)</span></td><td><span class="math-inline">\(6.62607015 \times 10^{-34}\)</span></td><td>J·s</td></tr><tr><td>引力常数</td><td><span class="math-inline">\(G\)</span></td><td><span class="math-inline">\(6.67430 \times 10^{-11}\)</span></td><td>m³/(kg·s²)</td></tr><tr><td>玻尔兹曼常数</td><td><span class="math-inline">\(k_B\)</span></td><td><span class="math-inline">\(1.380649 \times 10^{-23}\)</span></td><td>J/K</td></tr></tbody></table>
+</body>
+</html>

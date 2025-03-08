@@ -1,0 +1,2 @@
+/usr/bin/ar qc lib/libmarkdown_utils.a CMakeFiles/markdown_utils.dir/src/utils/file_utils.cpp.o CMakeFiles/markdown_utils.dir/src/utils/string_utils.cpp.o
+/usr/bin/ranlib lib/libmarkdown_utils.a

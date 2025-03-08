@@ -1,0 +1,6 @@
+{
+    "swift.path": "/home/wsy/swift-6.0.3-RELEASE-ubuntu24.04",
+    "swift.swiftEnvironmentVariables": {
+        "DEVELOPER_DIR": "public"
+    }
+}

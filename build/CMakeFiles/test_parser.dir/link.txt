@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/test_parser.dir/test/test_parser.cpp.o -o bin/test_parser  lib/libmarkdown_core.a lib/libmarkdown_parser.a lib/libmarkdown_renderer.a lib/libmarkdown_utils.a lib/libmarkdown_core.a 
